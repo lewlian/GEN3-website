@@ -1,0 +1,118 @@
+@import '../styles/variables.module.scss';
+@import '../styles/mixin.module.scss';
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  overflow-y: hidden;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+
+  padding-left: 10vw;
+
+  @include l {
+    padding-left: 20vw;
+  }
+
+  @include xl {
+    padding-left: 15vw;
+  }
+
+  @include xxl {
+    padding-left: 15vw;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+
+  &_desc {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.8rem;
+    letter-spacing: 0.05em;
+    text-align: left;
+
+    color: white;
+
+    @include m {
+      font-size: 4.8rem;
+    }
+
+    @include l {
+      font-size: 5.8rem;
+    }
+
+    @include xl {
+      font-size: 6.8rem;
+    }
+
+    @include xxl {
+      font-size: 8.8rem;
+    }
+
+    & span {
+      color: #f4911d;
+    }
+  }
+
+  &_action {
+    position: relative;
+    background-color: white;
+
+    width: 20rem;
+    height: 5rem;
+
+    margin-top: 5rem;
+
+    border-radius: 0.8rem;
+    border: none;
+
+    @include l {
+      margin-top: 2rem;
+      width: 28rem;
+      height: 7.4rem;
+    }
+
+    & button {
+      position: relative;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 500;
+
+      font-size: 1.5rem;
+      color: white;
+
+      background-color: #f4911d;
+
+      border-radius: 0.8rem;
+      border: none;
+
+      height: 100%;
+      width: 100%;
+      margin-top: -0.5rem;
+      transition: all 0.3s linear;
+
+      @include l {
+        font-size: 2.4rem;
+      }
+
+      &:hover {
+        margin-top: 0;
+        transition: all 0.3s linear;
+      }
+    }
+  }
+}
