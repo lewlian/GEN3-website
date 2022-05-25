@@ -130,6 +130,10 @@
     &:disabled {
       cursor: not-allowed;
       background-color: #f4901d8d;
+
+      &:hover {
+        margin-top: -0.5rem;
+      }
     }
   }
 }

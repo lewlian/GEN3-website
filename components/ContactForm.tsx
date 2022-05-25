@@ -3,6 +3,8 @@
 import styles from '../styles/ContactForm.module.scss';
 import { useEffect, useState } from 'react';
 import { appendSpreadsheet } from '../utils/googleSheetService';
+import emailjs from '@emailjs/browser';
+import envConfig from '../utils/envConfig';
 
 const limitMessageCount = 200;
 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -49,17 +51,49 @@ const ContactForm = () => {
       return setError('Please give a valid email.');
     }
 
+    var emailSent = true;
+
+    try {
+      const emailStatus = await emailjs.send(
+        envConfig.EMAIL_SERVICE_ID,
+        envConfig.EMAIL_TEMPLATE_ID,
+        {
+          subject,
+          from_name: name,
+          from_email: email,
+          message,
+        },
+        envConfig.EMAIL_PUBLIC_KEY
+      );
+
+      if (emailStatus.status === 200) {
+        emailSent = true;
+      } else {
+        emailSent = false;
+      }
+    } catch (error) {
+      emailSent = false;
+    }
+
+    const _date = new Date();
+    const currentDate = `${_date.getDate()}/${
+      _date.getMonth() + 1
+    }/${_date.getFullYear()}`;
+
     try {
       await appendSpreadsheet({
         Name: name,
         Email: email,
         Subject: subject,
         Message: message,
+        AutomatedEmail: emailSent,
+        Date: currentDate,
       });
       setBlank();
       setSuccess(true);
       return setError('');
     } catch (error) {
+      console.log(error);
       setSuccess(false);
       return setError('Something went wrong. Please try again.');
     }

@@ -13,6 +13,8 @@ interface IRow {
   Email: string;
   Subject: string;
   Message: string;
+  AutomatedEmail: boolean;
+  Date: string;
 }
 
 export const appendSpreadsheet = async (row: any) => {
