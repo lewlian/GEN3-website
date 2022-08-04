@@ -1,5 +1,5 @@
-import React, { Dispatch, createContext, useReducer } from 'react';
-import AppReducer, { IAction } from './reducer';
+import React, { Dispatch, createContext, useReducer } from "react";
+import AppReducer, { IAction } from "./reducer";
 
 export interface IAppContextState {
   animationTriggered: boolean;
@@ -16,7 +16,11 @@ const InitialAppContextState: IAppContextState = {
 
 export const AnimationContext = createContext({} as InitialContextProps);
 
-const AnimationContextProvider: React.FC = ({ children }) => {
+interface IProps {
+  children: any;
+}
+
+const AnimationContextProvider: React.FC<IProps> = (props: IProps) => {
   const [appState, appDispatch] = useReducer(
     AppReducer,
     InitialAppContextState
@@ -24,7 +28,7 @@ const AnimationContextProvider: React.FC = ({ children }) => {
 
   return (
     <AnimationContext.Provider value={{ appState, appDispatch }}>
-      {children}
+      {props.children}
     </AnimationContext.Provider>
   );
 };
