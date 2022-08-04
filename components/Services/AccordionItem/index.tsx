@@ -1,5 +1,5 @@
-import styles from '../styles/AccordionItem.module.scss';
-import { IData } from './Services';
+import styles from "./index.module.scss";
+import { IData } from "../../Services";
 
 const AccordionItem = ({
   data,
@@ -24,7 +24,7 @@ const AccordionItem = ({
         </div>
 
         <div
-          className={`${styles.answer} ${data.open ? styles.answer_open : ''}`}
+          className={`${styles.answer} ${data.open ? styles.answer_open : ""}`}
         >
           <ul className={`${styles.answer_text}`}>
             {data.details.map((i: string, _index: number) => {

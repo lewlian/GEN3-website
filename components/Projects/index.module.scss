@@ -1,5 +1,5 @@
-@import '../styles/variables.module.scss';
-@import '../styles/mixin.module.scss';
+@import "../../styles/variables.module.scss";
+@import "../../styles/mixin.module.scss";
 
 .container {
   position: relative;
@@ -36,7 +36,7 @@
   height: 100%;
 
   & h2 {
-    font-family: 'Orbitron', sans-serif;
+    font-family: "Orbitron", sans-serif;
     font-weight: 400;
     font-size: 2.4rem;
     margin-bottom: 2rem;

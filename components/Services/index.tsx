@@ -1,20 +1,18 @@
-/* eslint-disable @next/next/link-passhref */
-/* eslint-disable @next/next/no-img-element */
-import styles from '../styles/Services.module.scss';
+import styles from "./index.module.scss";
 import {
   MutableRefObject,
   useContext,
   useEffect,
   useRef,
   useState,
-} from 'react';
-import { ANIMATION } from '../context/actionType';
-import { AnimationContext } from '../context/animationContext';
-import useWindowDimensions from '../hooks/useWindowDimension';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import services, { IService } from '../utils/constants/services';
-import AccordionItem from './AccordionItem';
+} from "react";
+import { ANIMATION } from "../../context/actionType";
+import { AnimationContext } from "../../context/animationContext";
+import useWindowDimensions from "../../hooks/useWindowDimension";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import services, { IService } from "../../utils/constants/services";
+import AccordionItem from "./AccordionItem";
 
 export interface IData extends IService {
   open: boolean;
@@ -41,14 +39,14 @@ const Services = () => {
       tl.current = gsap
         .timeline({
           scrollTrigger: {
-            start: 'top 80%',
-            end: 'bottom+=100 top',
-            trigger: '#ServicesContainer',
+            start: "top 80%",
+            end: "bottom+=100 top",
+            trigger: "#ServicesContainer",
             onLeaveBack: (self) => self.disable(),
           },
         })
         .fromTo(
-          q('#ServicesTitle'),
+          q("#ServicesTitle"),
           {
             autoAlpha: 0.3,
           },
@@ -58,7 +56,7 @@ const Services = () => {
           }
         )
         .fromTo(
-          q('#ServicesContent'),
+          q("#ServicesContent"),
           {
             autoAlpha: 0.3,
           },
@@ -66,7 +64,7 @@ const Services = () => {
             autoAlpha: 1,
             duration: 2,
           },
-          '-=2'
+          "-=2"
         );
     }
   }, [windowDimensions.width]);
@@ -101,10 +99,10 @@ const Services = () => {
   };
 
   return (
-    <div id='ServicesContainer' className={styles.container} ref={el}>
+    <div id="ServicesContainer" className={styles.container} ref={el}>
       <div className={styles.main}>
         <div className={styles.content}>
-          <h2 id='ServicesTitle'>
+          <h2 id="ServicesTitle">
             <span>WHAT</span> WE DO
           </h2>
 

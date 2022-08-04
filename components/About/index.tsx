@@ -1,15 +1,12 @@
-/* eslint-disable @next/next/link-passhref */
-/* eslint-disable @next/next/no-img-element */
-import styles from '../styles/ContactUs.module.scss';
-import { MutableRefObject, useContext, useEffect, useRef } from 'react';
-import { ANIMATION } from '../context/actionType';
-import { AnimationContext } from '../context/animationContext';
-import useWindowDimensions from '../hooks/useWindowDimension';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import ContactForm from './ContactForm';
+import styles from "./index.module.scss";
+import { MutableRefObject, useContext, useEffect, useRef } from "react";
+import { ANIMATION } from "../../context/actionType";
+import { AnimationContext } from "../../context/animationContext";
+import useWindowDimensions from "../../hooks/useWindowDimension";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-const ContactUs = () => {
+const About = () => {
   const { appState: animationState, appDispatch: animationDispatch } =
     useContext(AnimationContext);
 
@@ -29,14 +26,14 @@ const ContactUs = () => {
       tl.current = gsap
         .timeline({
           scrollTrigger: {
-            start: 'top 80%',
-            end: 'bottom+=100 top',
-            trigger: '#ContactUsContainer',
+            start: "top 80%",
+            end: "bottom+=100 top",
+            trigger: "#AboutContainer",
             onLeaveBack: (self) => self.disable(),
           },
         })
         .fromTo(
-          q('#ContactUsTitle'),
+          q("#AboutTitle"),
           {
             autoAlpha: 0.3,
           },
@@ -46,7 +43,7 @@ const ContactUs = () => {
           }
         )
         .fromTo(
-          q('#ContactUsContent'),
+          q("#AboutContent"),
           {
             autoAlpha: 0.3,
           },
@@ -54,25 +51,29 @@ const ContactUs = () => {
             autoAlpha: 1,
             duration: 2,
           },
-          '-=2'
+          "-=2"
         );
     }
   }, [windowDimensions.width]);
 
   return (
-    <div id='ContactUsContainer' className={styles.container} ref={el}>
+    <div id="AboutContainer" className={styles.container} ref={el}>
       <div className={styles.main}>
         <div className={styles.content}>
-          <h2 id='ContactUsTitle'>CONTACT US</h2>
+          <h2 id="AboutTitle">
+            <span>WHO</span> WE ARE
+          </h2>
 
-          <p id='ContactUsContent'>
-            Need our services? Let&apos;s have a chat!
+          <p id="AboutContent">
+            GEN3 Studios is a subsidiary of NEX10 Labs. We are a team of
+            builders that seek to propel creators and companies into the Web 3.0
+            space. We help transform your creative vision onto the blockchain
+            through NFTs and Metaverse experiences.
           </p>
         </div>
-        <ContactForm />
       </div>
     </div>
   );
 };
 
-export default ContactUs;
+export default About;

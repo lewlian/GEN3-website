@@ -1,5 +1,5 @@
-@import '../styles/variables.module.scss';
-@import '../styles/mixin.module.scss';
+@import "../../styles/variables.module.scss";
+@import "../../styles/mixin.module.scss";
 
 .container {
   position: fixed;
@@ -37,7 +37,7 @@
   }
 
   &_logo {
-    cursor: 'pointer';
+    cursor: "pointer";
 
     & img {
       height: 4rem;
@@ -61,7 +61,7 @@
     height: 100%;
 
     & li {
-      font-family: 'Orbitron', sans-serif;
+      font-family: "Orbitron", sans-serif;
       font-weight: 500;
       cursor: pointer;
       color: white;
@@ -223,7 +223,7 @@
 
       color: white;
       font-size: 2rem;
-      font-family: 'Orbitron', sans-serif;
+      font-family: "Orbitron", sans-serif;
       cursor: pointer;
 
       & li {

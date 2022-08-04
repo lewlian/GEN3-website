@@ -1,26 +1,24 @@
-/* eslint-disable @next/next/no-img-element */
-import styles from '../styles/Navigation.module.scss';
-import Scroll, { Link as ScrollLink } from 'react-scroll';
-import { useState } from 'react';
-import useWindowDimensions from '../hooks/useWindowDimension';
-import socials from '../utils/constants/socials';
-import { getIconSvg, getGen3LogoSvg } from '../utils';
-import Gen3Logo from '../public/logo.png';
+import styles from "./index.module.scss";
+import Scroll, { Link as ScrollLink } from "react-scroll";
+import { useState } from "react";
+import useWindowDimensions from "../../hooks/useWindowDimension";
+import socials from "../../utils/constants/socials";
+import { getIconSvg, getGen3LogoSvg } from "../../utils";
 
 export enum NavItemsType {
-  ABOUT = 'ABOUT',
-  SERVICES = 'SERVICES',
+  ABOUT = "ABOUT",
+  SERVICES = "SERVICES",
   // PROJECTS = 'PROJECTS',
-  PRICING = 'PRICING',
-  CONTACT = 'CONTACT',
+  PRICING = "PRICING",
+  CONTACT = "CONTACT",
 }
 
 export const navItems = [
-  { name: 'ABOUT', href: NavItemsType.ABOUT },
-  { name: 'SERVICES', href: NavItemsType.SERVICES },
+  { name: "ABOUT", href: NavItemsType.ABOUT },
+  { name: "SERVICES", href: NavItemsType.SERVICES },
   // { name: 'PROJECTS', href: NavItemsType.PROJECTS },
-  { name: 'PRICING', href: NavItemsType.PRICING },
-  { name: 'CONTACT', href: NavItemsType.CONTACT },
+  { name: "PRICING", href: NavItemsType.PRICING },
+  { name: "CONTACT", href: NavItemsType.CONTACT },
 ];
 
 const Navigation = () => {
@@ -31,10 +29,10 @@ const Navigation = () => {
     <>
       {windowDimensions.width < LARGE_SCREEN_SIZE ? (
         <>
-          <nav id='TopNavigationSmall' className={styles.container}>
+          <nav id="TopNavigationSmall" className={styles.container}>
             <div
               className={`${styles.main_mobile} ${
-                expanded ? styles.main_mobile_expanded : ''
+                expanded ? styles.main_mobile_expanded : ""
               }`}
             >
               <div className={styles.main_mobile_nav}>
@@ -63,7 +61,7 @@ const Navigation = () => {
                 {socials.map((item) => {
                   return (
                     <li key={`Navigation_Social_${item.name}`}>
-                      <a href={item.href} target='_blank' rel='noreferrer'>
+                      <a href={item.href} target="_blank" rel="noreferrer">
                         <>{getIconSvg(item.icon)}</>
                       </a>
                     </li>
@@ -76,17 +74,17 @@ const Navigation = () => {
                   className={styles.main_logo}
                   onClick={() =>
                     Scroll.animateScroll.scrollToTop({
-                      spy: 'true',
-                      smooth: 'true',
+                      spy: "true",
+                      smooth: "true",
                       duration: 300,
-                      isDynamic: 'true',
+                      isDynamic: "true",
                     })
                   }
                 >
                   {getGen3LogoSvg(false)}
                 </div>
                 <div
-                  id='BurgerMenu'
+                  id="BurgerMenu"
                   className={styles.burger}
                   onClick={() => setExpanded((prevState) => !prevState)}
                 >
@@ -99,16 +97,16 @@ const Navigation = () => {
           </nav>
         </>
       ) : (
-        <nav id='Navigation' className={styles.container}>
+        <nav id="Navigation" className={styles.container}>
           <div className={styles.main}>
             <div
               className={styles.main_logo}
               onClick={() =>
                 Scroll.animateScroll.scrollToTop({
-                  spy: 'true',
-                  smooth: 'true',
+                  spy: "true",
+                  smooth: "true",
                   duration: 300,
-                  isDynamic: 'true',
+                  isDynamic: "true",
                 })
               }
             >
@@ -139,7 +137,7 @@ const Navigation = () => {
                 {socials.map((item) => {
                   return (
                     <li key={`Navigation_Social_${item.name}`}>
-                      <a href={item.href} target='_blank' rel='noreferrer'>
+                      <a href={item.href} target="_blank" rel="noreferrer">
                         <>{getIconSvg(item.icon)}</>
                       </a>
                     </li>

@@ -1,18 +1,17 @@
-/* eslint-disable @next/next/no-img-element */
-import type { NextPage } from 'next';
+import type { NextPage } from "next";
 
-import Meta from '../components/Meta';
-import styles from '../styles/Main.module.scss';
+import Meta from "../components/Meta";
+import styles from "../styles/Main.module.scss";
 
-import { Element as ScrollElement } from 'react-scroll';
-import Navigation, { NavItemsType } from '../components/Navigation';
-import Home from '../components/Home';
-import Footer from '../components/Footer';
-import About from '../components/About';
-import Services from '../components/Services';
-import Projects from '../components/Projects';
-import Pricing from '../components/Pricing';
-import ContactUs from '../components/ContactUs';
+import { Element as ScrollElement } from "react-scroll";
+import Navigation, { NavItemsType } from "../components/Navigation";
+import Home from "../components/Home";
+import Footer from "../components/Footer";
+import About from "../components/About";
+import Services from "../components/Services";
+import Projects from "../components/Projects";
+import Pricing from "../components/Pricing";
+import ContactUs from "../components/ContactUs";
 
 const Index: NextPage = () => {
   return (

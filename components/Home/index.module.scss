@@ -1,5 +1,5 @@
-@import '../styles/variables.module.scss';
-@import '../styles/mixin.module.scss';
+@import "../../styles/variables.module.scss";
+@import "../../styles/mixin.module.scss";
 
 .container {
   position: relative;
@@ -41,7 +41,7 @@
   width: 100%;
 
   &_desc {
-    font-family: 'Orbitron', sans-serif;
+    font-family: "Orbitron", sans-serif;
     font-size: 2.8rem;
     letter-spacing: 0.05em;
     text-align: left;
@@ -89,7 +89,7 @@
 
     & button {
       position: relative;
-      font-family: 'Orbitron', sans-serif;
+      font-family: "Orbitron", sans-serif;
       font-weight: 500;
 
       font-size: 1.5rem;

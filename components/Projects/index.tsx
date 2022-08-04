@@ -1,21 +1,21 @@
 /* eslint-disable @next/next/link-passhref */
 /* eslint-disable @next/next/no-img-element */
-import styles from '../styles/Projects.module.scss';
+import styles from "./index.module.scss";
 import {
   MutableRefObject,
   useContext,
   useEffect,
   useRef,
   useState,
-} from 'react';
-import { ANIMATION } from '../context/actionType';
-import { AnimationContext } from '../context/animationContext';
-import useWindowDimensions from '../hooks/useWindowDimension';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import AliceCarousel from 'react-alice-carousel';
-import projects from '../utils/constants/projects';
-import { getIconSvgForProjects } from '../utils';
+} from "react";
+import { ANIMATION } from "../../context/actionType";
+import { AnimationContext } from "../../context/animationContext";
+import useWindowDimensions from "../../hooks/useWindowDimension";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import AliceCarousel from "react-alice-carousel";
+import projects from "../../utils/constants/projects";
+import { getIconSvgForProjects } from "../../utils";
 
 const Projects = () => {
   const { appState: animationState, appDispatch: animationDispatch } =
@@ -39,14 +39,14 @@ const Projects = () => {
       tl.current = gsap
         .timeline({
           scrollTrigger: {
-            start: 'top 80%',
-            end: 'bottom+=100 top',
-            trigger: '#ProjectsContainer',
+            start: "top 80%",
+            end: "bottom+=100 top",
+            trigger: "#ProjectsContainer",
             onLeaveBack: (self) => self.disable(),
           },
         })
         .fromTo(
-          q('#ProjectsTitle'),
+          q("#ProjectsTitle"),
           {
             autoAlpha: 0.3,
           },
@@ -56,7 +56,7 @@ const Projects = () => {
           }
         )
         .fromTo(
-          q('#ProjectsContent'),
+          q("#ProjectsContent"),
           {
             autoAlpha: 0.3,
           },
@@ -64,7 +64,7 @@ const Projects = () => {
             autoAlpha: 1,
             duration: 2,
           },
-          '-=2'
+          "-=2"
         );
     }
   }, [windowDimensions.width]);
@@ -86,8 +86,8 @@ const Projects = () => {
               <a
                 href={social.link}
                 key={`Projects_${item.title}_${social.type}`}
-                target='_blank'
-                rel='noreferrer'
+                target="_blank"
+                rel="noreferrer"
               >
                 {getIconSvgForProjects(social.type)}
               </a>
@@ -115,8 +115,8 @@ const Projects = () => {
               <a
                 href={social.link}
                 key={`Projects_${item.title}_${social.type}`}
-                target='_blank'
-                rel='noreferrer'
+                target="_blank"
+                rel="noreferrer"
               >
                 {getIconSvgForProjects(social.type)}
               </a>
@@ -128,10 +128,10 @@ const Projects = () => {
   });
 
   return (
-    <div id='ProjectsContainer' className={styles.container} ref={el}>
+    <div id="ProjectsContainer" className={styles.container} ref={el}>
       <div className={styles.main}>
         <div className={styles.content}>
-          <h2 id='ProjectsTitle'>OUR PROJECTS</h2>
+          <h2 id="ProjectsTitle">OUR PROJECTS</h2>
           <div className={styles.carousel}>
             <div
               className={`${styles.controller} unselectable`}

@@ -1,12 +1,10 @@
-/* eslint-disable @next/next/link-passhref */
-/* eslint-disable @next/next/no-img-element */
-import styles from '../styles/Pricing.module.scss';
-import { MutableRefObject, useContext, useEffect, useRef } from 'react';
-import { ANIMATION } from '../context/actionType';
-import { AnimationContext } from '../context/animationContext';
-import useWindowDimensions from '../hooks/useWindowDimension';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import styles from "./index.module.scss";
+import { MutableRefObject, useContext, useEffect, useRef } from "react";
+import { ANIMATION } from "../../context/actionType";
+import { AnimationContext } from "../../context/animationContext";
+import useWindowDimensions from "../../hooks/useWindowDimension";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const Pricing = () => {
   const { appState: animationState, appDispatch: animationDispatch } =
@@ -28,14 +26,14 @@ const Pricing = () => {
       tl.current = gsap
         .timeline({
           scrollTrigger: {
-            start: 'top 80%',
-            end: 'bottom+=100 top',
-            trigger: '#PricingContainer',
+            start: "top 80%",
+            end: "bottom+=100 top",
+            trigger: "#PricingContainer",
             onLeaveBack: (self) => self.disable(),
           },
         })
         .fromTo(
-          q('#PricingTitle'),
+          q("#PricingTitle"),
           {
             autoAlpha: 0.3,
           },
@@ -45,7 +43,7 @@ const Pricing = () => {
           }
         )
         .fromTo(
-          q('#PricingContent'),
+          q("#PricingContent"),
           {
             autoAlpha: 0.3,
           },
@@ -53,18 +51,18 @@ const Pricing = () => {
             autoAlpha: 1,
             duration: 2,
           },
-          '-=2'
+          "-=2"
         );
     }
   }, [windowDimensions.width]);
 
   return (
-    <div id='PricingContainer' className={styles.container} ref={el}>
+    <div id="PricingContainer" className={styles.container} ref={el}>
       <div className={styles.main}>
         <div className={styles.content}>
-          <h2 id='PricingTitle'>PRICING</h2>
+          <h2 id="PricingTitle">PRICING</h2>
 
-          <p id='PricingContent'>
+          <p id="PricingContent">
             Flexible pricing for both creators and corporate who are interested
             to collaborate with us.
           </p>
