@@ -32,9 +32,9 @@ const Index: NextPage = () => {
               </ScrollElement>
             </div>
 
-            {/* <ScrollElement name={NavItemsType.PROJECTS}>
+            <ScrollElement name={NavItemsType.PROJECTS}>
               <Projects />
-            </ScrollElement> */}
+            </ScrollElement>
 
             {/* <div className={styles.background2}>
               <ScrollElement name={NavItemsType.PRICING}>
