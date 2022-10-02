@@ -65,10 +65,9 @@ const About = () => {
           </h2>
 
           <p id="AboutContent">
-            GEN3 Studios is a subsidiary of NEX10 Labs. We are a team of
-            builders that seek to propel creators and companies into the Web 3.0
-            space. We help transform your creative vision onto the blockchain
-            through NFTs and Metaverse experiences.
+            We are a team of builders that seek to propel creators and companies
+            into the Web 3.0 space. We help transform your creative vision onto
+            the blockchain through NFTs and Metaverse experiences.
           </p>
         </div>
       </div>
