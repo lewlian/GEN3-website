@@ -25,7 +25,7 @@
   }
 
   & input {
-    font-family: "Bai Jamjuree", sans-serif;
+    font-family: $baseFont;
     width: 100%;
     background-color: transparent;
     border: none;
@@ -50,7 +50,7 @@
   }
 
   & textarea {
-    font-family: "Bai Jamjuree", sans-serif;
+    font-family: $baseFont;
     width: 100%;
     background-color: transparent;
     border: none;
@@ -82,7 +82,7 @@
   width: 100%;
 
   & p {
-    font-family: "Bai Jamjuree", sans-serif;
+    font-family: $baseFont;
     font-size: 1.8rem;
     color: white;
   }
@@ -102,7 +102,7 @@
 
   & button {
     position: relative;
-    font-family: "Orbitron", sans-serif;
+    font-family: $titleFont;
     font-weight: 500;
 
     font-size: 1.5rem;
@@ -139,7 +139,7 @@
 }
 
 .error {
-  font-family: "Bai Jamjuree", sans-serif;
+  font-family: $baseFont;
   position: relative;
   width: 100%;
   border: 0.2rem solid red;
@@ -151,7 +151,7 @@
 }
 
 .success {
-  font-family: "Bai Jamjuree", sans-serif;
+  font-family: $baseFont;
   position: relative;
   width: 100%;
   border: 0.2rem solid lightgreen;

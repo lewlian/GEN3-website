@@ -61,7 +61,7 @@
     height: 100%;
 
     & li {
-      font-family: "Orbitron", sans-serif;
+      font-family: $titleFont;
       font-weight: 500;
       cursor: pointer;
       color: white;
@@ -223,7 +223,7 @@
 
       color: white;
       font-size: 2rem;
-      font-family: "Orbitron", sans-serif;
+      font-family: $titleFont;
       cursor: pointer;
 
       & li {

@@ -11,11 +11,7 @@ const Home = () => {
       <div className={styles.main}>
         <div className={styles.content}>
           <div className={styles.content_desc}>
-            WE <span>TRANSFORM</span>
-            <br />
-            YOUR <span>IMAGINATION</span>
-            <br />
-            INTO <span>REALITY</span>
+            THE NEXT GENERATION <br /> OF BUILDERS
           </div>
 
           <div className={styles.content_action}>
