@@ -36,11 +36,11 @@ const Index: NextPage = () => {
               <Projects />
             </ScrollElement> */}
 
-            <div className={styles.background2}>
+            {/* <div className={styles.background2}>
               <ScrollElement name={NavItemsType.PRICING}>
                 <Pricing />
               </ScrollElement>
-            </div>
+            </div> */}
 
             <ScrollElement name={NavItemsType.CONTACT}>
               <ContactUs />
