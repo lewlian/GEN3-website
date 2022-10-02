@@ -41,7 +41,7 @@
   width: 100%;
 
   &_desc {
-    font-family: $titleFont;
+    font-family: $subFont;
     font-size: 2.8rem;
     letter-spacing: 0.05em;
     text-align: left;
@@ -66,6 +66,22 @@
 
     & span {
       color: #f4911d;
+    }
+  }
+
+  &_sum {
+    & p {
+      font-family: $baseFont;
+      color: #f4911d;
+      font-weight: 500;
+
+      font-size: 1.8rem;
+
+      margin: 2.4rem 0;
+
+      @include l {
+        font-size: 2.4rem;
+      }
     }
   }
 

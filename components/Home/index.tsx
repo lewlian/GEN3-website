@@ -14,6 +14,10 @@ const Home = () => {
             THE NEXT GENERATION <br /> OF BUILDERS
           </div>
 
+          <div className={styles.content_sum}>
+            <p>SMART CONTRACTS | WEB DEVELOPMENT | CONSULTING</p>
+          </div>
+
           <div className={styles.content_action}>
             <button
               type="button"
