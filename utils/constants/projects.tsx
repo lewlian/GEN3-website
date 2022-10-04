@@ -3,6 +3,8 @@ import BeatbotsLogo from "../../public/assets/projects/beatbots.svg";
 import ParallaxLogo from "../../public/assets/projects/parallax.svg";
 import PropertyLogo from "../../public/assets/projects/property.svg";
 import ArgoFinanceLogo from "../../public/assets/projects/argofinance.svg";
+import UULogo from "../../public/assets/projects/uu.svg";
+import ShogunLogo from "../../public/assets/projects/shogunsamurai.svg";
 import CleuLogo from "../../public/assets/projects/cleu.png";
 import ZootiezLogo from "../../public/assets/projects/zootiez.png";
 import TiloLogo from "../../public/assets/projects/tilo.png";
@@ -12,6 +14,7 @@ import EthAmsterdamLogo from "../../public/assets/ethglobal/eth_amsterdam.svg";
 import EthHackMoneyLogo from "../../public/assets/ethglobal/eth_hackmoney.svg";
 import EthHackFSLogo from "../../public/assets/ethglobal/eth_hackfs.svg";
 import MorpheusLogo from "../../public/assets/ethglobal/morpheus_labs.svg";
+import EthMexicoLogo from "../../public/assets/ethglobal/eth_mexico.svg";
 
 export const NFTProjects = [
   {
@@ -68,6 +71,42 @@ export const NFTProjects = [
       },
     ],
   },
+  {
+    title: "Uninterested Unicorns",
+    image: UULogo,
+    socials: [
+      {
+        type: SocialEnums.TWITTER,
+        link: "https://twitter.com/U_UnicornsNFT",
+      },
+      {
+        type: SocialEnums.OPENSEA,
+        link: "https://opensea.io/collection/ununicornsofficial",
+      },
+      {
+        type: SocialEnums.WEBSITE,
+        link: "https://uunicorns.io/",
+      },
+    ],
+  },
+  {
+    title: "ShogunS侍murais",
+    image: ShogunLogo,
+    socials: [
+      {
+        type: SocialEnums.TWITTER,
+        link: "https://twitter.com/ShogunSamurais",
+      },
+      {
+        type: SocialEnums.OPENSEA,
+        link: "https://opensea.io/collection/shogunsamurais",
+      },
+      {
+        type: SocialEnums.WEBSITE,
+        link: "https://shogunsamurais.com/",
+      },
+    ],
+  },
 ];
 
 export const DefiProjects = [
@@ -89,17 +128,24 @@ export const DefiProjects = [
 
 export const HackathonProjects = [
   {
+    title: "Woosh",
+    hackathon: "ETHMexico",
+    image: EthMexicoLogo,
+    socials: [
+      {
+        type: SocialEnums.GITHUB,
+        link: "https://ethglobal.com/showcase/woosh-pu1fn",
+      },
+    ],
+  },
+  {
     title: "PEW",
     hackathon: "ETHNYC",
     image: EthNYCLogo,
     socials: [
       {
-        type: SocialEnums.SUBMISSION,
-        link: "https://github.com/FloorGangETHNYC",
-      },
-      {
-        type: SocialEnums.WEBSITE,
-        link: "https://pew-frontend.vercel.app/",
+        type: SocialEnums.GITHUB,
+        link: "https://ethglobal.com/showcase/pew-pza8i",
       },
     ],
   },
@@ -109,12 +155,8 @@ export const HackathonProjects = [
     image: EthSeoulLogo,
     socials: [
       {
-        type: SocialEnums.SUBMISSION,
+        type: SocialEnums.GITHUB,
         link: "https://devfolio.co/projects/gaave-6df3",
-      },
-      {
-        type: SocialEnums.WEBSITE,
-        link: "https://gaave-ui.herokuapp.com/",
       },
     ],
   },
@@ -124,12 +166,8 @@ export const HackathonProjects = [
     image: EthHackMoneyLogo,
     socials: [
       {
-        type: SocialEnums.SUBMISSION,
-        link: "https://github.com/SafeZen",
-      },
-      {
-        type: SocialEnums.WEBSITE,
-        link: "https://safezen.vercel.app/",
+        type: SocialEnums.GITHUB,
+        link: "https://showcase.ethglobal.com/hackmoney2022/safezen-rjwh7",
       },
     ],
   },
@@ -139,12 +177,8 @@ export const HackathonProjects = [
     image: EthHackFSLogo,
     socials: [
       {
-        type: SocialEnums.SUBMISSION,
-        link: "https://github.com/Unblogg",
-      },
-      {
-        type: SocialEnums.WEBSITE,
-        link: "https://unblogged.eth.link/",
+        type: SocialEnums.GITHUB,
+        link: "https://ethglobal.com/showcase/unblogged-nih1q",
       },
     ],
   },
@@ -154,7 +188,7 @@ export const HackathonProjects = [
     image: MorpheusLogo,
     socials: [
       {
-        type: SocialEnums.SUBMISSION,
+        type: SocialEnums.GITHUB,
         link: "https://github.com/Giv3rs",
       },
     ],
@@ -165,12 +199,8 @@ export const HackathonProjects = [
     image: EthAmsterdamLogo,
     socials: [
       {
-        type: SocialEnums.SUBMISSION,
-        link: "https://github.com/Giv3rs",
-      },
-      {
-        type: SocialEnums.WEBSITE,
-        link: "https://www.niftyr3wrds.com/",
+        type: SocialEnums.GITHUB,
+        link: "https://showcase.ethglobal.com/ethamsterdam/niftyrewards-mu1yz",
       },
     ],
   },
