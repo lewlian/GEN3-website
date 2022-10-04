@@ -46,7 +46,7 @@ export const NFTProjects = [
       },
       {
         type: SocialEnums.WEBSITE,
-        link: "https://parallax-staging-ui.herokuapp.com/",
+        link: "https://theparallax.com/",
       },
     ],
   },
