@@ -1,19 +1,10 @@
-/* eslint-disable @next/next/link-passhref */
-/* eslint-disable @next/next/no-img-element */
 import styles from "./index.module.scss";
-import {
-  MutableRefObject,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { MutableRefObject, useContext, useEffect, useRef } from "react";
 import { ANIMATION } from "../../context/actionType";
 import { AnimationContext } from "../../context/animationContext";
 import useWindowDimensions from "../../hooks/useWindowDimension";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import AliceCarousel from "react-alice-carousel";
 import {
   NFTProjects,
   DefiProjects,

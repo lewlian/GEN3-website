@@ -86,7 +86,7 @@
 
       &_projs {
         list-style: none;
-        padding: 0;
+        padding: 2rem 0;
         margin: 1rem 0;
 
         position: relative;
@@ -98,10 +98,19 @@
         width: 100%;
         overflow-x: auto;
 
-        &::-webkit-scrollbar,
-        &::-webkit-scrollbar-thumb,
+        &::-webkit-scrollbar {
+          display: block;
+          height: 0.3rem;
+        }
+
         &::-webkit-scrollbar-track {
-          display: none;
+          color: #000;
+          background-color: #000;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          color: $orange;
+          background-color: $orange;
         }
 
         &_card {
@@ -139,7 +148,7 @@
 
           &_title {
             font-family: $titleFont;
-            color: $white;
+            color: $orange;
             font-size: 1.8rem;
             margin: 1rem 0;
           }

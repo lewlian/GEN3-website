@@ -9,7 +9,6 @@ export enum NavItemsType {
   ABOUT = "ABOUT",
   SERVICES = "SERVICES",
   PROJECTS = "PROJECTS",
-  PRICING = "PRICING",
   CONTACT = "CONTACT",
 }
 
@@ -17,7 +16,6 @@ export const navItems = [
   { name: "ABOUT", href: NavItemsType.ABOUT },
   { name: "SERVICES", href: NavItemsType.SERVICES },
   { name: "PROJECTS", href: NavItemsType.PROJECTS },
-  { name: "PRICING", href: NavItemsType.PRICING },
   { name: "CONTACT", href: NavItemsType.CONTACT },
 ];
 
