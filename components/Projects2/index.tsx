@@ -14,13 +14,8 @@ import useWindowDimensions from "../../hooks/useWindowDimension";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import AliceCarousel from "react-alice-carousel";
-import {
-  NFTProjects,
-  DefiProjects,
-  HackathonProjects,
-} from "../../utils/constants/projects";
+import { NFTProjects } from "../../utils/constants/projects";
 import { getIconSvgForProjects } from "../../utils";
-import Image from "next/image";
 
 const Projects = () => {
   const { appState: animationState, appDispatch: animationDispatch } =
@@ -32,6 +27,8 @@ const Projects = () => {
   const tl = useRef<gsap.core.Timeline>();
 
   const { windowDimensions, LARGE_SCREEN_SIZE } = useWindowDimensions();
+
+  const carouselEl = useRef<AliceCarousel>(null);
 
   useEffect(() => {
     if (
@@ -72,26 +69,23 @@ const Projects = () => {
     }
   }, [windowDimensions.width]);
 
-  const renderProjectCard = (proj: any) => {
+  const itemsDisplayInMediumScreen = NFTProjects.map((item, index: number) => {
     return (
-      <li
-        className={styles.content_body_section_projs_card}
-        key={`${proj.title}`}
-      >
-        <div className={styles.content_body_section_projs_card_image}>
-          <Image src={proj.image} alt={`${proj.title}`} layout="fill" />
-        </div>
-
-        <p className={styles.content_body_section_projs_card_title}>
-          {proj.title}
-        </p>
-
-        <div className={styles.content_body_section_projs_card_socials}>
-          {proj.socials.map((social: any) => {
+      <div key={index} className={styles.item}>
+        <img
+          src={item.image.src}
+          alt={item.title}
+          className={styles.carousel_item_image}
+        />
+        <div
+          id={`Projects_${item.title}`}
+          className={styles.carousel_item_socials}
+        >
+          {item.socials.map((social) => {
             return (
               <a
                 href={social.link}
-                key={`Projects_${proj.title}_${social.type}`}
+                key={`Projects_${item.title}_${social.type}`}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -100,34 +94,27 @@ const Projects = () => {
             );
           })}
         </div>
-      </li>
+      </div>
     );
-  };
+  });
 
-  const renderHackathonCard = (proj: any) => {
+  const itemsDisplayInLargeScreen = NFTProjects.map((item, index: number) => {
     return (
-      <li
-        className={styles.content_body_section_projs_card}
-        key={`${proj.title}`}
-      >
-        <div className={styles.content_body_section_projs_card_image}>
-          <Image src={proj.image} alt={`${proj.title}`} layout="fill" />
-        </div>
-
-        <p className={styles.content_body_section_projs_card_title}>
-          {proj.title}
-        </p>
-
-        <p className={styles.content_body_section_projs_card_sub}>
-          At {proj.hackathon}
-        </p>
-
-        <div className={styles.content_body_section_projs_card_socials}>
-          {proj.socials.map((social: any) => {
+      <div key={index} className={styles.carousel_item}>
+        <img
+          src={item.image.src}
+          alt={item.title}
+          className={styles.carousel_item_image}
+        />
+        <div
+          id={`Projects_${item.title}`}
+          className={styles.carousel_item_socials}
+        >
+          {item.socials.map((social) => {
             return (
               <a
                 href={social.link}
-                key={`Projects_${proj.title}_${social.type}`}
+                key={`Projects_${item.title}_${social.type}`}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -136,36 +123,52 @@ const Projects = () => {
             );
           })}
         </div>
-      </li>
+      </div>
     );
-  };
+  });
 
   return (
     <div id="ProjectsContainer" className={styles.container} ref={el}>
       <div className={styles.main}>
         <div className={styles.content}>
-          <h2 id="ProjectsTitle">
-            OUR <span>PROJECTS</span>
-          </h2>
+          <h2 id="ProjectsTitle">OUR PROJECTS</h2>
+          <div className={styles.carousel}>
+            <div
+              className={`${styles.controller} unselectable`}
+              onClick={(e) => {
+                if (carouselEl && carouselEl.current) {
+                  carouselEl.current.slidePrev(e);
+                }
+              }}
+            >
+              &lang;
+            </div>
+            <div className={styles.carousel_sub}>
+              <AliceCarousel
+                ref={carouselEl}
+                animationDuration={800}
+                disableDotsControls
+                disableButtonsControls
+                autoWidth
+                infinite
+                mouseTracking
+                items={
+                  windowDimensions.width < LARGE_SCREEN_SIZE
+                    ? itemsDisplayInMediumScreen
+                    : itemsDisplayInLargeScreen
+                }
+              />
+            </div>
 
-          <div id="ProjectsContent" className={styles.content_body}>
-            <div className={styles.content_body_section}>
-              <h3>NFTs</h3>
-              <ul className={styles.content_body_section_projs}>
-                {NFTProjects.map((proj) => renderProjectCard(proj))}
-              </ul>
-            </div>
-            <div className={styles.content_body_section}>
-              <h3>Defi</h3>
-              <ul className={styles.content_body_section_projs}>
-                {DefiProjects.map((proj) => renderProjectCard(proj))}
-              </ul>
-            </div>
-            <div className={styles.content_body_section}>
-              <h3>Hackathons</h3>
-              <ul className={styles.content_body_section_projs}>
-                {HackathonProjects.map((proj) => renderHackathonCard(proj))}
-              </ul>
+            <div
+              className={`${styles.controller} unselectable`}
+              onClick={(e) => {
+                if (carouselEl && carouselEl.current) {
+                  carouselEl.current.slideNext(e);
+                }
+              }}
+            >
+              &rang;
             </div>
           </div>
         </div>

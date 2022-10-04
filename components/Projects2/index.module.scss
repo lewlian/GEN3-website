@@ -1,0 +1,166 @@
+@import "../../styles/variables.module.scss";
+@import "../../styles/mixin.module.scss";
+
+.container {
+  position: relative;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+
+  max-width: 190rem;
+
+  padding-top: 15vh;
+  padding-bottom: 15vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100rem;
+  height: 100%;
+
+  & h2 {
+    font-family: $titleFont;
+    font-weight: 400;
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+    color: white;
+    letter-spacing: 0.05em;
+
+    & span {
+      color: #f4911d;
+    }
+
+    @include l {
+      font-size: 4.8rem;
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  &_sub {
+    width: 70vw;
+
+    @include m {
+      width: calc(25rem * 2.5);
+    }
+
+    @include l {
+      width: calc(25rem * 3.5);
+    }
+
+    @include xxl {
+      width: calc(25rem * 4.5);
+    }
+  }
+
+  &_item {
+    &:hover .carousel_item_socials {
+      opacity: 1;
+    }
+
+    &:hover .carousel_item_image {
+      opacity: 0.2;
+    }
+
+    &_image {
+      width: 22rem;
+      height: 22rem;
+      transition: all 0.5s ease;
+
+      @include l {
+        width: 23rem;
+        height: 23rem;
+      }
+    }
+
+    &_socials {
+      margin-top: 2rem;
+      opacity: 1;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      height: 100%;
+      position: relative;
+      width: 100%;
+
+      & a {
+        & svg {
+          transition: all 0.5s ease;
+          fill: white;
+        }
+
+        &:hover {
+          & svg {
+            transition: all 0.5s ease;
+            fill: #2b2b2b;
+          }
+        }
+      }
+
+      @include m {
+        margin: 0;
+
+        opacity: 0;
+        width: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.5s ease;
+      }
+    }
+  }
+}
+
+.controller {
+  width: 5rem;
+  font-size: 3rem;
+  color: white;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+
+  cursor: pointer;
+
+  @include l {
+    font-size: 5rem;
+
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+
+  &:hover {
+    color: #2b2b2b;
+    transition: all 0.5s ease;
+  }
+}

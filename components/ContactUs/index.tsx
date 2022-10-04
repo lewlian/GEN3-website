@@ -61,7 +61,9 @@ const ContactUs = () => {
     <div id="ContactUsContainer" className={styles.container} ref={el}>
       <div className={styles.main}>
         <div className={styles.content}>
-          <h2 id="ContactUsTitle">CONTACT US</h2>
+          <h2 id="ContactUsTitle">
+            <span>CONTACT</span> US
+          </h2>
 
           <p id="ContactUsContent">
             Need our services? Let&apos;s have a chat!

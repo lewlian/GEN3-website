@@ -3,6 +3,10 @@ $red: #b34044;
 $grey: #a0a0a0;
 $white: #ffffff;
 
+$titleFont: "Orbitron", sans-serif;
+$baseFont: "Bai Jamjuree", sans-serif;
+$subFont: "Chakra Petch", sans-serif;
+
 $screen-xs: 320px;
 $screen-s: 480px;
 $screen-m: 768px;
@@ -15,21 +19,3 @@ $screen-max: 3400px;
 $screen-tall-l: 768px;
 $screen-tall-xl: 875px;
 $screen-tall-xxl: 1001px;
-
-:export {
-  black: $black;
-  red: $red;
-  grey: $grey;
-  white: $white;
-  screenXS: $screen-xs;
-  screenS: $screen-s;
-  screenM: $screen-m;
-  screenL: $screen-l;
-  screenXL: $screen-xl;
-  screenXXL: $screen-xxl;
-  screenXXXL: $screen-xxxl;
-  screenMAX: $screen-max;
-  screenTallL: $screen-tall-l;
-  screenTallXL: $screen-tall-xl;
-  screenTallXXL: $screen-tall-xxl;
-}

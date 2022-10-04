@@ -4,4 +4,6 @@ export enum SocialEnums {
   WEBSITE,
   OPENSEA,
   DISCORD,
+  GITHUB,
+  SUBMISSION,
 }
