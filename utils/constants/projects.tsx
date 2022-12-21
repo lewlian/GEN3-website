@@ -71,24 +71,24 @@ export const NFTProjects = [
       },
     ],
   },
-  {
-    title: "Uninterested Unicorns",
-    image: UULogo,
-    socials: [
-      {
-        type: SocialEnums.TWITTER,
-        link: "https://twitter.com/U_UnicornsNFT",
-      },
-      {
-        type: SocialEnums.OPENSEA,
-        link: "https://opensea.io/collection/ununicornsofficial",
-      },
-      {
-        type: SocialEnums.WEBSITE,
-        link: "https://uunicorns.io/",
-      },
-    ],
-  },
+  // {
+  //   title: "Uninterested Unicorns",
+  //   image: UULogo,
+  //   socials: [
+  //     {
+  //       type: SocialEnums.TWITTER,
+  //       link: "https://twitter.com/U_UnicornsNFT",
+  //     },
+  //     {
+  //       type: SocialEnums.OPENSEA,
+  //       link: "https://opensea.io/collection/ununicornsofficial",
+  //     },
+  //     {
+  //       type: SocialEnums.WEBSITE,
+  //       link: "https://uunicorns.io/",
+  //     },
+  //   ],
+  // },
   // {
   //   title: "ShogunS侍murais",
   //   image: ShogunLogo,
