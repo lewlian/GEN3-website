@@ -89,24 +89,24 @@ export const NFTProjects = [
       },
     ],
   },
-  {
-    title: "ShogunS侍murais",
-    image: ShogunLogo,
-    socials: [
-      {
-        type: SocialEnums.TWITTER,
-        link: "https://twitter.com/ShogunSamurais",
-      },
-      {
-        type: SocialEnums.OPENSEA,
-        link: "https://opensea.io/collection/shogunsamurais",
-      },
-      {
-        type: SocialEnums.WEBSITE,
-        link: "https://shogunsamurais.com/",
-      },
-    ],
-  },
+  // {
+  //   title: "ShogunS侍murais",
+  //   image: ShogunLogo,
+  //   socials: [
+  //     {
+  //       type: SocialEnums.TWITTER,
+  //       link: "https://twitter.com/ShogunSamurais",
+  //     },
+  //     {
+  //       type: SocialEnums.OPENSEA,
+  //       link: "https://opensea.io/collection/shogunsamurais",
+  //     },
+  //     {
+  //       type: SocialEnums.WEBSITE,
+  //       link: "https://shogunsamurais.com/",
+  //     },
+  //   ],
+  // },
 ];
 
 export const DefiProjects = [
